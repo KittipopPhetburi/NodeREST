@@ -61,7 +61,7 @@ app.post('/books', (req, res) => {
 
 app.put('/books/:id', (req, res) => {
     const book = req.body;
-    db.run('UPDATE books SET TITLE = ?, author = ?, WHERE id = ?', book.title, book.author, req.param.id, function(err) {
+    db.run('UPDATE books SET title = ?, author = ? WHERE id = ?', book.title, book.author, req.param.id, function(err) {
         if (err) {
             res.status(500).send(err);
         }
