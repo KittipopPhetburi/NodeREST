@@ -2,7 +2,7 @@ const express = require('express');
 const sqlite3 = require('sqlite3');
 const app = express();
 
-const db = new sqlite3.Database('./Batabase/Book.sqlite');
+const db = new sqlite3.Database('./Database/Books.sqlite');
 
 app.use(express.json());
 
@@ -61,7 +61,7 @@ app.put('/books/:id',(req,res) => {
     });
 });
 
-app.dalete('/books/:id',(req,res) => {
+app.delete('/books/:id',(req,res) => {
     db.run('DELETE FROM books WHERE id = ?',req.params.id,function(err){
         if(err){
             res.status(500).send(err);
