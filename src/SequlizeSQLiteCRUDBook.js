@@ -30,7 +30,7 @@ const Book = sequelize.define('book',{
 
     app.get('/books', (req,res) => {
         Book.findAll().then(book => {
-            res.json(book);
+            res.json(books);
         }).catch(err => {
             res.status(500).send(err);
         });
