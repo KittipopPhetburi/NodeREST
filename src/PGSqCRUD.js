@@ -10,6 +10,7 @@ const dbUrl = 'postgres://webadmin:NGNiel91728@node58291-kittipopnoderest.proen.
 // create a connection to the database
 const sequelize = new Sequelize (dbUrl);
 
+
 const Book = sequelize.define('book',{
     id: {
         type: Sequelize.INTEGER,
