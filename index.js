@@ -98,11 +98,11 @@ const Book = sequelize.define('book', {
                     res.send({});
                 }).catch(err => {
                     res.status(500).send(err);
-                    });
-                }
-    }).catch(err=> {
-        res.status(500).send(err);
-    });
+                });
+            }
+        }).catch(err=> {
+            res.status(500).send(err);
+        });
     });
     
     // start the server
