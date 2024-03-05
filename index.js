@@ -7,6 +7,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+
 // Database connection
 mongoose.connect(
     "mongodb://admin:VKGmel83401@node58290-kittipopnoderest.proen.app.ruk-com.cloud",
@@ -27,6 +28,8 @@ const Book = mongoose.model("Book", {
 });
 
 const app = express();
+const cors = require('cors');
+app.use(cors());
 app.use(bodyParser.json());
 
 // Create
